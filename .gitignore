@@ -6,3 +6,7 @@ target/
 ## Database ##
 *.h2
 *.db
+
+## Bower
+bower_components/
+node_modules/
