@@ -17,6 +17,27 @@
     <script src="app/app.js"></script>
 </head>
 <body>
-<div ng-view></div>
+<div class="navbar navbar-default">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="index.xhtml">BSSE 2015</a>
+    </div>
+
+    <div>
+        <a href="#/login" >Login</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-2 col-md-4 cold-sm-6">
+        <ul class="nav nav-pills nav-stacked">
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="#/candidates">Candidates</a>
+            </li>
+        </ul>
+    </div>
+    <div ng-view></div>
+</div>
 </body>
 </html>
