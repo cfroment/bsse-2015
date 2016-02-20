@@ -1,0 +1,32 @@
+<persistence version="1.0"
+             xmlns="http://java.sun.com/xml/ns/persistence">
+    <persistence-unit name="test" transaction-type="RESOURCE_LOCAL">
+
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>org.frou.model.Evaluator</class>
+        <class>org.frou.model.Criterion</class>
+        <class>org.frou.model.Candidate</class>
+        <class>org.frou.model.Evaluation</class>
+        <class>org.frou.model.CandidateDocument</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <!-- <shared-cache-mode>DISABLE_SELECTIVE</shared-cache-mode> -->
+
+
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:BSSE_DB_Test;DB_CLOSE_DELAY=-1" />
+            <property name="javax.persistence.jdbc.user" value="" />
+            <property name="javax.persistence.jdbc.password" value="" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
+            <property name="hibernate.show_sql" value="true" />
+            <property name="javax.persistence.schema-generation.database.action"
+                      value="drop-and-create" />
+            <property name="javax.persistence.schema-generation.create-source"
+                      value="metadata" />
+            <property name="javax.persistence.sql-load-script-source"
+                      value="META-INF/repository_test_data.sql" />
+        </properties>
+
+    </persistence-unit>
+
+</persistence>

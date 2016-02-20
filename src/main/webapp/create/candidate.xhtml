@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns="http://www.w3.org/1999/xhtml">
+
+<f:metadata>
+    <f:event listener="#{createCandidateBean.init}" type="preRenderView"/>
+</f:metadata>
+
+<h:body>
+    <ui:composition template="../base.xhtml">
+        <ui:define name="content">
+            <h2>Create new candidate</h2>
+
+            <div>
+                <h:form id="create_candidate_form" method="post" class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <h:outputLabel for="firstName" class="col-lg-2 col-sm-2 control-label" value="First name :"/>
+                        <div class="col-lg-5 col-sm-10">
+                            <h:inputText class="form-control" id="firstName"
+                                         value="#{createCandidateBean.candidate.firstName}"/>
+                        </div>
+                        <div class="col-lg-5 col-sm-0"></div>
+                    </div>
+                    <div class="form-group">
+                        <h:outputLabel for="lastName" class="col-lg-2 col-sm-2 control-label" value="Last name :"/>
+                        <div class="col-lg-5 col-sm-10">
+                            <h:inputText class="form-control" id="lastName"
+                                         value="#{createCandidateBean.candidate.lastName}"/>
+                        </div>
+                        <div class="col-lg-5 col-sm-0"></div>
+                    </div>
+                    <div class="form-group">
+                        <h:outputLabel for="destination" class="col-lg-2 col-sm-2 control-label" value="Destination :"/>
+                        <div class="col-lg-5 col-sm-10">
+                            <h:inputText class="form-control" id="destination"
+                                         value="#{createCandidateBean.candidate.destination}"/>
+                        </div>
+                        <div class="col-lg-5 col-sm-0"></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-offset-2 col-sm-offset-2 col-lg-10 col-sm-10">
+                            <h:commandButton class="btn btn-success" value="Create" type="submit"
+                                             action="#{createCandidateBean.createCandidate}"/>
+                        </div>
+                    </div>
+                </h:form>
+            </div>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>

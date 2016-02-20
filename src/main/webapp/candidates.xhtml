@@ -1,0 +1,26 @@
+<div ng-init="loadCandidates()">
+    <table class="table table-condensed">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Destination</th>
+            <th>CV</th>
+            <th>Motivation</th>
+            <th>Evaluate</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="candidate in candidates">
+            <td>{{candidate.id}}</td>
+            <td>{{candidate.firstName +" "+candidate.lastName}}</td>
+            <td>{{candidate.destination}}</td>
+            <td> ***</td>
+            <td> ***</td>
+            <td>
+                <a href="/evaluation/{{candidate.id}}" role="button" class="btn btn-primary">Evaluate</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
