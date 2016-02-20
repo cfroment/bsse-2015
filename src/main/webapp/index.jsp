@@ -22,8 +22,8 @@
         <a class="navbar-brand" href="index.xhtml">BSSE 2015</a>
     </div>
 
-    <div>
-        <a href="#/login" >Login</a>
+    <div >
+        <a class="navbar-right navbar-link" href="/login" >Login</a>
     </div>
 </div>
 <div class="row">
