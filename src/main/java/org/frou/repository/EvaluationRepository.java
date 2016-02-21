@@ -14,7 +14,7 @@ import java.util.List;
  * Created by Corentin on 17-novembre-14.
  */
 @Stateless
-public class EvaluationRepository extends BaseRepository<Evaluation> {
+public class EvaluationRepository extends BaseRepository<Evaluation, Long> {
 
     /**
      * Finds evaluations for a given Evaluator.

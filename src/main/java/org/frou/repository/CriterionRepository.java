@@ -10,7 +10,7 @@ import java.util.List;
  * Created by Corentin on 17-novembre-14.
  */
 @Stateless
-public class CriterionRepository extends BaseRepository<Criterion> {
+public class CriterionRepository extends BaseRepository<Criterion, Long> {
 
     /**
      * Gets all the criteria of the database, order by weight (descending order)

@@ -12,7 +12,7 @@ import java.util.List;
  * Created by Corentin on 17-novembre-14.
  */
 @Stateless
-public class CandidateDocumentRepository extends BaseRepository<CandidateDocument> {
+public class CandidateDocumentRepository extends BaseRepository<CandidateDocument, Long> {
 
     /**
      * Gets all the CandidateDocument entites with the given DocumentType.

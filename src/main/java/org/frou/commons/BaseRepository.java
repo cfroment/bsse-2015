@@ -4,11 +4,12 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
+import java.util.List;
 
 /**
  * Created by Corentin on 13-novembre-14.
  */
-public abstract class BaseRepository<T> {
+public abstract class BaseRepository<T, PK> {
 
     @PersistenceContext(name = "ApplicationPersistenceUnit")
     private EntityManager entityManager;
@@ -22,12 +23,16 @@ public abstract class BaseRepository<T> {
             Type[] fieldArgTypes = pt.getActualTypeArguments();
             clazz = (Class<T>) fieldArgTypes[0];
         } else {
-            clazz=null;
+            clazz = null;
         }
     }
 
-    public T find(Object primaryKey) {
+    public T find(PK primaryKey) {
         return entityManager.find(this.clazz, primaryKey);
+    }
+
+    public List<T> findAll() {
+        return entityManager.createQuery("SELECT entity FROM " + clazz.getSimpleName() + " entity", clazz).getResultList();
     }
 
     protected EntityManager getEntityManager() {

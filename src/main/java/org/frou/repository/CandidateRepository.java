@@ -10,7 +10,7 @@ import java.util.List;
  * Created by Corentin on 17-novembre-14.
  */
 @Stateless
-public class CandidateRepository extends BaseRepository<Candidate> {
+public class CandidateRepository extends BaseRepository<Candidate, Long> {
 
     /**
      * Gets all the Candidate entities.
@@ -18,7 +18,7 @@ public class CandidateRepository extends BaseRepository<Candidate> {
      * @return a List of Candidate.
      */
     public List<Candidate> getAllCandidates() {
-        return getEntityManager().createQuery("SELECT c FROM Candidate c", Candidate.class).getResultList();
+        return findAll();
     }
 
     /**
