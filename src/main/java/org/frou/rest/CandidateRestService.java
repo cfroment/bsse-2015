@@ -1,9 +1,6 @@
 package org.frou.rest;
 
-import org.frou.model.Candidate;
-import org.frou.repository.CandidateRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.json.Json;
@@ -13,7 +10,11 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import java.util.List;
+
+import org.frou.model.Candidate;
+import org.frou.repository.CandidateRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  *
@@ -27,7 +28,7 @@ public class CandidateRestService {
     private CandidateRepository candidateRepository;
 
     @GET
-    @Path("/all")
+    @Path("/")
     @Produces(MediaType.APPLICATION_JSON)
     public JsonArray getAllCandidates() {
         LOGGER.info("Getting all the candidates.");

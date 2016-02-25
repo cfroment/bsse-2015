@@ -1,0 +1,12 @@
+<table ng-table="candidatesTable" class="table table-condensed table-striped">
+    <tr ng-repeat="candidate in $data">
+        <td data-title="'#'">{{candidate.id}}</td>
+        <td data-title="'Name'">{{candidate.firstName +" "+candidate.lastName}}</td>
+        <td data-title="'Destination'">{{candidate.destination}}</td>
+        <td data-title="'CV'">***</td>
+        <td data-title="'Cover'">***</td>
+        <td data-title="'Rate'">
+            <a ui-sref="evaluation.candidate({candidateId:'{{candidate.id}}'})" role="button" class="btn btn-primary">Rate</a>
+        </td>
+    </tr>
+</table>

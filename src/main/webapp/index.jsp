@@ -21,24 +21,28 @@
 </head>
 <body>
 <div class="navbar navbar-default">
-    <div class="navbar-header">
-        <a class="navbar-brand" href="/home">BSSE 2015</a>
-    </div>
-
-    <div>
-        <a class="navbar-right navbar-link" href="/login">Login</a>
+    <div class="container-fluid">
+        <div class="navbar-left navbar-header">
+            <a class="navbar-brand" ui-sref="home">BSSE 2016</a>
+        </div>
+        <ul class="navbar navbar-nav navbar-right">
+            <li><a class="nav navbar-link" ui-sref="login">Login</a></li>
+        </ul>
     </div>
 </div>
 <div class="col-lg-2 col-md-2 cold-sm-6">
     <ul class="nav nav-pills nav-stacked">
         <li>
-            <a href="#">Home</a>
+            <a ui-sref="home">Home</a>
         </li>
         <li>
-            <a href="#">Candidates</a>
+            <a ui-sref="candidates">Candidates</a>
+        </li>
+        <li>
+            <a ui-sref="evaluators">Evaluators</a>
         </li>
     </ul>
 </div>
-<div col="col-lg-10 col-md-10 col-sm-6" ui-view></div>
+<div class="col-lg-10 col-md-10 col-sm-6" ui-view></div>
 </body>
 </html>

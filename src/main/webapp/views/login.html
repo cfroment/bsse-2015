@@ -1,0 +1,15 @@
+<form ng-submit="login(credentials)">
+    <div class="col-md-offset-2 col-md-4">
+        <div class="form-group">
+            <input type="text" id="userName" class="form-control input-sm" placeholder="username / e-mail"
+                   ng-model="credentials.userName"/>
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control input-sm" id="password" placeholder="password"
+                   ng-model="credentials.password"/>
+        </div>
+        <div class="pull-right">
+            <button type="login" class="btn btn-success">Submit</button>
+        </div>
+    </div>
+</form>
